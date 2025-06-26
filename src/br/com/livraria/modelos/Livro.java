@@ -1,19 +1,30 @@
 package br.com.livraria.modelos;
 
 public class Livro {
+    private int id;
     private String titulo;
     private String autor;
     private int anoLancamento;
     private String editora;
     private boolean disponivel;
 
-    public Livro(String titulo, String autor, int anoLancamento, String editora, boolean disponivel) {
+    public Livro(int id, String titulo, String autor, int anoLancamento, String editora) {
+        this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.anoLancamento = anoLancamento;
         this.editora = editora;
-        this.disponivel = disponivel;
+        this.disponivel = true;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -54,4 +65,10 @@ public class Livro {
         this.disponivel = disponivel;
     }
 
+    @Override
+    public String toString() {
+        return "ID: " + this.id + "; Titulo: " + this.titulo + "; Autor: " +
+                this.autor + "; Ano: " + this.anoLancamento + "; Editora: " +
+                "; Disponivel: " + this.disponivel;
+    }
 }

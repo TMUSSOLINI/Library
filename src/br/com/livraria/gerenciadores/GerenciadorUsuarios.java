@@ -5,14 +5,14 @@ import br.com.livraria.modelos.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciadorUsuarios {
+public class GerenciadorUsuarios implements Gerenciador {
     private List<Usuario> usuarios;
 
     public GerenciadorUsuarios() {
         this.usuarios = new ArrayList<>();
     }
-
-    public Usuario buscarUsuarioPorId(int id) {
+    @Override
+    public Usuario verificarDuplicidade(int id) {
         for (Usuario usuario : this.usuarios) {
             if (usuario.getId() == id) {
                 return usuario;
@@ -22,7 +22,7 @@ public class GerenciadorUsuarios {
     }
 
     public void adicionarUsuario(Usuario novoUsuario) {
-        if (buscarUsuarioPorId(novoUsuario.getId()) != null) {
+        if (verificarDuplicidade(novoUsuario.getId()) != null) {
             System.out.println("Erro: Usúario ja cadastrado com o ID: " + novoUsuario.getId());
             return;
         }
