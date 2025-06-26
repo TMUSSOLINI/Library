@@ -1,6 +1,7 @@
 package br.com.livraria.modelos;
 
-public class Pessoa {
+public class Usuario {
+    private int id;
     private String nome;
     private String sobrenome;
     private String email;
@@ -8,11 +9,18 @@ public class Pessoa {
     private boolean usuarioAtivo;
 
 
-    public Pessoa(String nome, String sobrenome, String email, String telefone) {
+
+    public Usuario(int id, String nome, String sobrenome, String email, String telefone) {
+        this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
         this.telefone = telefone;
+        this.usuarioAtivo = true;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
@@ -57,7 +65,8 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome + ", Sobrenome: " + this.sobrenome
-                + ", Email: " + this.email + ", Telefone: " + this.telefone +
+        return "ID: " + this.id + "; Nome: " + this.nome + "; Sobrenome: " + this.sobrenome
+                + "; Email: " + this.email + "; Telefone: " + this.telefone
+                + "; Situação: " + this.usuarioAtivo;
     }
 }
