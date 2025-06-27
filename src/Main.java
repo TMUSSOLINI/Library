@@ -5,6 +5,7 @@ import br.com.livraria.modelos.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -17,17 +18,18 @@ public class Main {
 
         gerenciadorUsuario.adicionarUsuario(new Usuario(1, "Thiago", "Mussolini",
                 "teste@teste.com", "11 948774793"));
-        gerenciadorUsuario.adicionarUsuario(new Usuario(2, "Arthur", "Mussolini",
-                "teste@teste.com", "11 993876510"));
-        gerenciadorUsuario.adicionarUsuario(new Usuario(2, "Arthur", "Mussolini",
-                "teste@teste.com", "11 993876510"));
-
         gerenciadorLivro.adicionarLivro(new Livro(1,"Harry Potter","JK Rolling",
                 2001, "Abril"));
+        gerenciadorLivro.adicionarLivro(new Livro(2,"Hobbit","JK Rolling",
+                2001, "Abril"));
+        gerenciadorLivro.adicionarLivro(new Livro(3,"Crepusculo","JK Rolling",
+                2001, "Abril"));
+        gerenciadorLivro.adicionarLivro(new Livro(4,"Codigo Davinci","JK Rolling",
+                2001, "Abril"));
+        gerenciadorLivro.adicionarLivro(new Livro(5,"Amanhecer","JK Rolling",
+                2001, "Abril"));
+        gerenciadorLivro.emprestarLivro("Harry Potter", "teste","Hobbit");
 
-
-
-        gerenciadorUsuario.listarTodosUsuarios();
         gerenciadorLivro.listarTodosLivros();
 
     }

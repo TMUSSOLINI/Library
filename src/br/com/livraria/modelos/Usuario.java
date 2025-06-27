@@ -7,7 +7,7 @@ public class Usuario {
     private String email;
     private String telefone;
     private boolean usuarioAtivo;
-
+    private int maximoLivro = 3;
 
 
     public Usuario(int id, String nome, String sobrenome, String email, String telefone) {
@@ -17,6 +17,18 @@ public class Usuario {
         this.email = email;
         this.telefone = telefone;
         this.usuarioAtivo = true;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getMaximoLivro() {
+        return maximoLivro;
+    }
+
+    public void setMaximoLivro(int maximoLivro) {
+        this.maximoLivro = maximoLivro;
     }
 
     public int getId() {
